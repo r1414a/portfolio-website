@@ -1,0 +1,376 @@
+/* Media Query*/
+
+@media only screen and (max-width: 1070px) {
+            section#first #first-column-2 {
+                display: none;
+            }
+
+            section#first #first-column-1 {
+                width: 100%;
+            }
+
+            section#first::after {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 970px) and (max-width: 1070px) {
+
+            section#projects {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#projects .project-1 img {
+                width: 550px;
+            }
+        }
+
+        @media only screen and (min-width: 1070px) and (max-width: 1380px) {
+            section#first #first-column-1 h1 {
+                width: 70%;
+            }
+
+            section#first::after {
+                width: 30%;
+                left: 53%;
+            }
+
+            section#projects {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#projects .project-1 img {
+                width: 650px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+
+
+            section#whatido .columns {
+                flex-direction: column;
+            }
+
+            section#whatido .columns #development {
+                border-right: none;
+                padding-bottom: 20px;
+                border-bottom: 1px solid gold;
+            }
+
+            section#contact {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#contact .contact {
+                display: flex;
+                flex-direction: column;
+            }
+
+            section#contact .stalk-links .fa-brands {
+                padding: 0px 20px 0px 20px;
+            }
+
+            section#contact .contact span {
+                padding: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 720px) {
+            section#about {
+                padding: 100px 0px 100px 0px;
+            }
+
+        }
+
+        @media only screen and (max-width: 785px) {
+            section#projects {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#projects .project-1 {
+                flex-direction: column;
+            }
+
+            section#projects .project-1 img {
+                width: 100%;
+            }
+
+            section#projects .project-1 .proj-desc {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 785px) and (max-width: 832px) {
+            section#projects {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#projects .project-1 img {
+                width: 454px;
+            }
+        }
+
+        @media only screen and (min-width: 832px) and (max-width: 970px) {
+            section#projects {
+                padding: 100px 0px 100px 0px;
+            }
+
+            section#projects .project-1 img {
+                width: 500px;
+            }
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: 970px) {
+            section#whatido .columns aside p {
+                width: 90%;
+            }
+
+            section#contact .contact {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;  
+    /* font-family: 'Open Sans', Arial, Helvetica Neue, sans-serif; */
+}
+
+nav{
+    font-size: 2.5rem;
+    margin: 20px;
+}
+nav span{
+    color: gold;
+}
+
+
+/* Home section*/
+#first{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#first::after{
+    content: "";
+    background-color: white;
+    background: url("./img/photo.jpg") no-repeat center center/cover;
+    position: absolute;
+    width: 20%;
+    height: 45%;
+    top: 20%;
+    left: 57%;
+    border-radius: 20px;
+    box-shadow: 15px 15px 0px 0px gold;
+}
+
+#first #first-column-1{
+    color: white;
+    background-color: #101010;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#first #first-column-1 h1{
+    font-size: 2.7rem;
+    text-align: center;
+}
+#first #first-column-1 h1 span{
+    color: gold;
+}
+
+#first #first-column-1 #mytext{
+    font-size: 1.7rem;
+}
+
+#first #first-column-2{
+    background-color: #ECECEC;
+    width: 50%;
+}
+
+#first #first-column-1 button{
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #101010;
+    color: white;
+    border: 1px solid white;
+    margin-top: 10px;
+}
+
+#first #first-column-1 button:hover{
+    background-color: gold;
+    color: black;
+    cursor: pointer;
+}
+
+/*ABOUT ME Section*/
+
+#about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    text-align: center;
+}
+
+#about h1{
+    font-size: 3rem;
+    margin: 20px;
+    color: grey;
+    text-decoration: underline;
+}
+
+#about p{
+    font-size: 1.3rem;
+    color: grey;
+    margin: 4px;
+}
+
+
+/* What i do*/
+
+#whatido{
+    background-color: whitesmoke;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    color: grey;
+    padding: 20px;
+}
+
+#whatido .columns{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#whatido h1{
+    font-size: 3rem;
+    margin: 20px;
+    text-decoration: underline;
+}
+#whatido .columns aside h3{
+    font-size: 1.7rem;
+    margin: 10px;
+}
+
+#whatido .columns #development{
+    border-right: 1px solid gold;
+}
+
+#whatido .columns aside p{
+    width: 65%;
+    margin: 0px auto;
+    border-top: 1px solid gold;
+    border-bottom: 1px solid gold;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Projects*/
+
+
+#projects{
+    color: grey;
+    padding: 100px;
+}
+#projects h1{
+    font-size: 3rem;
+    margin: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#projects .project-1{
+    display: flex;
+    margin-top: 70px;
+    box-shadow:  0px 0px 10px 10px grey;
+    /* justify-content: center; */
+}
+
+#projects .project-1 .proj-desc{
+    width: 50%;
+    color: gold;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+} 
+
+#projects .project-1 img{
+    filter: grayscale(1);
+}
+ 
+
+#projects .project-1 img:hover{
+    filter: none;
+    cursor: pointer;
+} 
+
+.skills span{
+    color: cyan;
+}
+
+#projects .seprater{
+    width: 100%;
+    border: 3px dashed grey;
+    margin-top: 60px;
+}
+/* Contact me*/
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 100px 0px 100px;
+    color: grey;
+    background-color: whitesmoke;
+}
+
+#contact .stalk h1{
+    font-size: 3rem;
+    margin: 20px;
+    text-decoration: underline;
+}
+
+
+#contact .stalk-links .fa-brands{
+    font-size: 2rem;
+    padding: 0px 50px 0px 50px;
+}
+
+#contact .contact{
+    margin-top: 25px;
+}
+
+#contact .contact span{
+    padding: 0px 40px 0px 40px;
+}
+#contact .copywrite{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 30px;
+    color: gold;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupesh Chincholkar | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- Animation on scroll cdn-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    
+    <!--For jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel = "icon" href = "./img/tabimg.png" type = "image/png">
+</head>
+
+<body>
+    <!-- <nav>
+        <h2>R<span>upesh</span></h2>
+    </nav> -->
+    <section id="first">
+        <aside id="first-column-1">
+            <h1 class="fw-light">Hello, I'm <span><i>Rupesh Chincholkar</i></span></h1>
+            <h3 class="lead" id="mytext"></h3>
+            <button class="fst-italic" onclick="location.href='#projects'">View my work <i
+                    class="fa-solid fa-arrow-down"></i></button>
+        </aside>
+        <aside id="first-column-2">
+        </aside>
+    </section>
+
+    <!--About ME-->
+    <section id="about" data-aos="zoom-in">
+        <h1>About ME</h1>
+        <p class="about-p1  text-muted">I'm a Front-End Developer with graduate degree in B.E. IT. I have a strong
+            passion in
+            website developement.</p>
+        <p class="text-muted">I'm a enterprise level web developer with the expertise in Frameworks / Programming
+            Languages <b>HTML + CSS +
+                JavaScript + Bootstrap + ReactJS + NodeJS</b>.</p>
+    </section>
+
+    <!--what i do-->
+    <section id="whatido">
+        <h1>What I do</h1>
+        <div class="columns">
+
+            <aside id="development">
+                <h1><i class="fa-solid fa-code"></i></h1>
+                <h3>DEVELOPEMENT</h3>
+                <p class="text-muted">
+                    I writes code in HTML5, CSS3 and JavaScript, jQuery and most of the front web technologies.
+                </p>
+            </aside>
+            <aside id="otherthings">
+                <h1><i class="fa-solid fa-pen-to-square"></i></h1>
+                <h3>ENJOYING LIFE</h3>
+                <p class="text-muted">
+                    Besides coding, I love Running, Skating, listening Musics, Observing, Watching Series, etc.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!--Projects-->
+    <section id="projects">
+        <div class="heading">
+            <h1>My Work / Projects</h1>
+        </div>
+        <div class="project-1" data-aos="flip-left">
+            <a href="https://movie-information-app.netlify.app" target="_blank"><img src="./img/movie.png" alt=""
+                    height="350" width="732.550" data-bs-toggle="tooltip" data-bs-title=" Click to View Project"></a>
+            <div class="proj-desc">
+                <div class="title">
+                    <h3>Featured Project</h2>
+                        <h4 class="fst-italic text-primary">Movie Information App</h4>
+                </div>
+                <div class="desc">
+                    <p class="lead text-success">This app let you search about any Movies or Series and then either you
+                        can view more detail information or you can store your's favourite ones in favourite section.
+                        API used for this app is OMDBapi.</p>
+                </div>
+                <div class="skills">
+                    <h4>Skills Used:-</h4>
+                    <span>
+                        HTML <i class="fa-brands fa-html5"></i> ,
+                        CSS <i class="fa-brands fa-css3-alt"></i> ,
+                        JS <i class="fa-brands fa-js"></i> ,
+                        Reactjs <i class="fa-brands fa-react"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="seprater"></div>
+
+        <div class="project-1" data-aos="flip-left">
+            <div class="proj-desc">
+                <div class="title">
+                    <h3>Featured Project</h2>
+                        <h4 class="fst-italic text-primary">Book Directory App</h4>
+                </div>
+                <div class="desc">
+                    <p class="lead text-success">Book Directory App where you can add a book written by author by
+                        filling a form, add author, delete book details means you can perform all CRUD operations.
+                    </p>
+                </div>
+                <div class="skills">
+                    <h4>Skills Used:-</h4>
+                    <span>
+                        HTML <i class="fa-brands fa-html5"></i> ,
+                        CSS <i class="fa-brands fa-css3-alt"></i> ,
+                        JS <i class="fa-brands fa-js"></i> ,
+                        Nodejs <i class="fa-brands fa-node-js"></i> ,
+                        MongoDb <i class="fa-solid fa-database"></i>
+                    </span>
+                </div>
+            </div>
+            <a href="https://book-directory-app.onrender.com" target="_blank"><img src="./img/book.png" alt=""
+                    height="350" data-bs-toggle="tooltip" data-bs-title="Click to View Project"></a>
+        </div>
+
+        <div class="seprater"></div>
+
+        <div class="project-1" data-aos="flip-left">
+            <a href="https://cryptocurrency-tracker-app-9f501c.netlify.app" target="_blank"><img src="./img/crypto.png"
+                    alt="" height="350" data-bs-toggle="tooltip" data-bs-title="Click to View Project"></a>
+            <div class="proj-desc">
+                <div class="title">
+                    <h3>Featured Project</h2>
+                        <h4 class="fst-italic text-primary">Cryptocurrency Tracker App</h4>
+                </div>
+
+                <div class="desc">
+                    <p class="lead text-success">Cryptocurrency Tracker App let you track current market price, price
+                        change in percentage, 24 hours Volume and Market cap value of Cryptocurrency of your interest.
+                    </p>
+                </div>
+                <div class="skills">
+                    <h4>Skills Used:-</h4>
+                    <span>
+                        HTML <i class="fa-brands fa-html5"></i> ,
+                        CSS <i class="fa-brands fa-css3-alt"></i> ,
+                        JS <i class="fa-brands fa-js"></i> ,
+                        Bootstrap <i class="fa-brands fa-bootstrap"></i> ,
+                        Reactjs <i class="fa-brands fa-react"></i>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seprater"></div>
+
+        <div class="project-1" data-aos="flip-left">
+
+            <div class="proj-desc">
+                <div class="title">
+                    <h3>Featured Project</h2>
+                        <h4 class="fst-italic text-primary">Website Home-Page Design</h4>
+                </div>
+                <div class="desc">
+                    <p class="lead text-success">This is just Website Home Page Design</p>
+                </div>
+                <div class="skills">
+                    <h4>Skills Used:-</h4>
+                    <span>
+                        HTML <i class="fa-brands fa-html5"></i> ,
+                        CSS <i class="fa-brands fa-css3-alt"></i> ,
+                        JS <i class="fa-brands fa-js"></i> ,
+                        Bootstrap <i class="fa-brands fa-bootstrap"></i>
+                    </span>
+                </div>
+            </div>
+            <a href="https://r1414a.github.io/Website-Home-Page" target="_blank"><img src="./img/homepage.png" alt=""
+                    height="350" data-bs-toggle="tooltip" data-bs-title="Click to View Project"></a>
+        </div>
+
+        <div class="seprater"></div>
+
+        <div class="project-1" data-aos="flip-left">
+            <a href="https://r1414a.github.io/Rock-Paper-Scissor/" target="_blank"><img src="./img/rock.png"
+                    alt="" height="350" data-bs-toggle="tooltip" data-bs-title="Click to View Project"></a>
+            <div class="proj-desc">
+                <div class="title">
+                    <h3>Featured Project</h2>
+                        <h4 class="fst-italic text-primary">Rock-Paper-Scissors Game</h4>
+                </div>
+
+                <div class="desc">
+                    <p class="lead text-success">Rock-Paper-Scissors Game
+                    </p>
+                </div>
+                <div class="skills">
+                    <h4>Skills Used:-</h4>
+                    <span>
+                        HTML <i class="fa-brands fa-html5"></i> ,
+                        CSS <i class="fa-brands fa-css3-alt"></i> ,
+                        JS <i class="fa-brands fa-js"></i> 
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact Me-->
+    <section id="contact">
+        <div class="stalk">
+            <h1>Stalk ME</h1>
+        </div>
+        <div class="stalk-links">
+            <a href="https://www.linkedin.com/in/rupesh-chincholkar-a61503234/"><i
+                    class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/r1414a"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="contact">
+            <span>Phone No:- +91 9637609051 <a href="tel:+919637609051"><i class="fa-solid fa-phone"></i></a></span>
+            <span>Email:- rupeshchincholkar14@gmail.com <a href="mailto:rupeshchincholkar14@gmail.com"><i
+                        class="fa-sharp fa-solid fa-envelope"></i></a></span>
+
+
+        </div>
+        <div class="copywrite">
+            <p>
+                2023
+                <i class="fa-solid fa-copyright"></i>
+                Rupesh Chincholkar
+            </p>
+        </div>
+    </section>
+</body>
+<!-- For Typing Animation-->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="index.js"></script>
+
+</html>
