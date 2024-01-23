@@ -149,15 +149,27 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;  
-    /* font-family: 'Open Sans', Arial, Helvetica Neue, sans-serif; */
+    font-family: 'Nunito', Arial, Helvetica Neue, sans-serif;
+}
+p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.4px;
+    letter-spacing: -0.1px;
 }
 
+h1{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: -0.2px;
+}
 nav{
     font-size: 2.5rem;
     margin: 20px;
 }
 nav span{
-    color: gold;
+    color: #3f4a57;
 }
 
 
@@ -241,53 +253,35 @@ nav span{
     text-decoration: underline;
 }
 
-#about p{
-    font-size: 1.3rem;
-    color: grey;
-    margin: 4px;
-}
-
 
 /* What i do*/
 
 #whatido{
-    background-color: whitesmoke;
     display: flex;
-    text-align: center;
     flex-direction: column;
-    color: grey;
     padding: 20px;
-}
-
-#whatido .columns{
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 #whatido h1{
     font-size: 3rem;
+    text-align: center;
     margin: 20px;
+    color: grey;
     text-decoration: underline;
 }
-#whatido .columns aside h3{
-    font-size: 1.7rem;
-    margin: 10px;
+
+#whatido .columns{
+    display: flex;
+    justify-content: center;
+    
 }
 
-#whatido .columns #development{
-    border-right: 1px solid gold;
+#whatido .columns aside{
+    width: 40%;
+    padding: 20px;
+    margin: 20px;
+    background-color: #c1c1c126;
 }
-
-#whatido .columns aside p{
-    width: 65%;
-    margin: 0px auto;
-    border-top: 1px solid gold;
-    border-bottom: 1px solid gold;
-    font-size: 1.2rem;
-    padding: 10px;
-}
-
 /* Projects*/
 
 
