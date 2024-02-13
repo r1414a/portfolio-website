@@ -1,13 +1,6 @@
-const typed = new Typed('#mytext',{
-    strings : ['Based in Pune','Full-stack web developer'],
-    typeSpeed: 70,
-    backSpeed: 10,
-    loop: true
+let c = document.getElementById('cursor');
+addEventListener("mousemove",(e) => {
+    c.classList.add(`top-${clientY}`);
+    c.classList.add(`left-${clientX}`);
+    console.log(e);
 })
-
-
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-
-AOS.init();
