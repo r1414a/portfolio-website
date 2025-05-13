@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,34 +7,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rupesh Chincholkar | Full Stack Developer</title>
   <!-- <link rel="stylesheet" href="style.css"> -->
-  <style>
-    #besucherzaehler2 {
-      position: absolute;
-      bottom: 0;
-    }
-  </style>
+
+
+  <!-- Matterjs -->
+   <script src="./matterjs/matter.js"></script>
+  <!-- p5js -->
+   <script src="./matterjs/p5.js"></script>
 
   <!--TailwindCSS-->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-  <!--For jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+ 
   <link rel="icon" href="./img/tabimg.png" type="image/png" />
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 </head>
 
-<body class="text-gray-600 font-sans">
+<body class="overflow-x-hidden text-gray-600 font-sans">
   <!--<div id="cursor" class="h-64 w-64 bg-blue-300 absolute"></div>-->
-  <section class="min-h-screen text-center flex items-center justify-center text-gray-700">
-    <div class="lg:container lg:mx-auto px-6 md:px-10 lg:px-4 xl:px-20">
+  <section id="hero-section" class="block relative w-screen h-screen text-gray-700">
+    <button class="absolute top-10 left-10 underline cursor-pointer" onclick="resetSimulation()">Reset</button>
+    <a href="#sub-hero" class="absolute flex flex-col items-center justify-center bottom-20 lg:bottom-5 left-1/2 animate-bounce text-gray-700 hover:text-blue-600"><span class="text-md">Scroll</span><span class="text-4xl "><i class="bi bi-arrow-down-circle-fill"></i></span></a>
+    <!-- <div class="lg:container lg:mx-auto px-6 md:px-10 lg:px-4 xl:px-20">
       <h1 class="mb-8 font-medium text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">
         Hello, I'm <span class="text-blue-600">Rupesh Chincholkar</span>
       </h1>
-      <p class="text-base sm:text-lg lg:text-xl 2xl:text-2xl">
+    </div> -->
+  </section>
+
+  <section id="sub-hero" class="my-20 min-h-screen flex items-center text-center text-gray-700">
+    <div class="mx-auto px-4 md:px-10 lg:px-4 xl:px-20">
+      <!-- <div class="lg:hidden lg:container lg:mx-auto px-6 md:px-10 lg:px-4 xl:px-20">
+      <h1 class="mb-8 font-medium text-6xl lg:text-7xl 2xl:text-8xl">
+        Hello, I'm <span class="text-blue-600">Rupesh Chincholkar</span>
+      </h1>
+      </div> -->
+      <p id="sub-hero-text" class="text-2xl">
         I'm <span class="text-blue-600">Pune</span> based
         <span class="text-blue-600">FrontEnd/MERN Developer</span> with
         graduate degree in <span class="text-blue-600">B.E. IT</span>.Connect
@@ -42,28 +56,28 @@
       </p>
       <div class="flex justify-center my-8 gap-6">
         <a href="tel:+919637609051"
-          class="group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
-            class="transition-all ease-in-out duration-1000 fa-solid fa-phone bg-blue-600 p-3 sm:p-4 group-hover:bg-white"></i></a>
+          class="sub-hero-contact-2box-left group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
+            class="transition-all ease-in-out duration-700 fa-solid fa-phone bg-blue-600 p-3 sm:p-4 group-hover:bg-white"></i></a>
 
         <a href="https://www.linkedin.com/in/rupesh-chincholkar-a61503234/"
-          class="group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
-            class="transition-all ease-in-out duration-1000 fa-brands fa-linkedin bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
+          class="sub-hero-contact-2box-left group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
+            class="transition-all ease-in-out duration-700 fa-brands fa-linkedin bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
 
         <a href="https://github.com/r1414a"
-          class="group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
-            class="transition-all ease-in-out duration-1000 fa-brands fa-github bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
+          class="sub-hero-contact-2box-right group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
+            class="transition-all ease-in-out duration-700 fa-brands fa-github bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
 
         <a href="mailto:rupeshchincholkar14@gmail.com"
-          class="group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
-            class="transition-all ease-in-out duration-1000 fa-sharp fa-solid fa-envelope bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
+          class="sub-hero-contact-2box-right group text-xl md:text-2xl 2xl:text-3xl text-white border border-blue-600 text-white bg-blue-600 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"><i
+            class="transition-all ease-in-out duration-700 fa-sharp fa-solid fa-envelope bg-blue-600 group-hover:bg-white p-3 sm:p-4"></i></a>
       </div>
       <div class="flex justify-center gap-6">
         <a href="Rupesh Chincholkar-Resume.pdf" download
-          class="transition-all ease-in-out duration-1000 border border-blue-600 text-white bg-blue-600 py-3 px-3 sm:px-4 md:px-6 sm:text-lg md:text-xl 2xl:text-2xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
+          class="sub-hero-interactive-button  border border-blue-600 text-white bg-blue-600 py-3 px-3 sm:px-4 md:px-6 sm:text-lg md:text-xl 2xl:text-2xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
           Download Resume
         </a>
         <a href="#projects"
-          class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 py-3 px-3 sm:px-4 md:px-6 sm:text-lg md:text-xl 2xl:text-2xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
+          class="sub-hero-interactive-button  border border-blue-600 text-white bg-blue-600 py-3 px-3 sm:px-4 md:px-6 sm:text-lg md:text-xl 2xl:text-2xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
           View Projects
         </a>
       </div>
@@ -71,10 +85,52 @@
   </section>
 
   <!--what i do-->
-  <section id="whatido">
+
+  <section id="whatido" class="pb-20 bg-white">
+    <div class=" mx-auto px-6 md:px-10 lg:px-20">
+      <div class="text-center mb-16">
+        <h1 id="section-whatido" class="text-5xl font-semibold text-blue-600 underline lg:text-6xl">
+          What I do
+        </h1>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-12 xl:gap-x-20">
+        
+        <!-- Development Card -->
+        <div id="developmentCard" class="group transition-shadow duration-500 flex flex-col gap-5 p-8 md:p-10 shadow-lg hover:shadow-2xl rounded-xl bg-white">
+          <div class="text-blue-600">
+            <i class="fa-solid fa-code text-white bg-blue-600 p-4 text-2xl md:text-xl"></i>
+          </div>
+          <h3 class="text-3xl font-semibold text-gray-800">Development</h3>
+          <ul class="text-gray-600 text-base lg:text-lg space-y-2">
+            <li><span class="font-semibold text-black">Frontend:</span> Bootstrap, TailwindCSS, JavaScript, React JS</li>
+            <li><span class="font-semibold text-black">Libraries:</span> Pannellum.js, GSAP, ScrollTrigger, Matter.js</li>
+            <li><span class="font-semibold text-black">Backend:</span> Node.js, Express, Pug/EJS</li>
+            <li><span class="font-semibold text-black">Databases:</span> MongoDB</li>
+          </ul>
+          <div class="bg-blue-600 h-1 w-28 mt-5 transition-all duration-500 group-hover:w-56 md:group-hover:w-72"></div>
+        </div>
+  
+        <!-- Life Enjoyment Card -->
+        <div class="group transition-shadow duration-500 flex flex-col gap-5 p-8 md:p-10 shadow-lg hover:shadow-2xl rounded-xl bg-white">
+          <div class="text-blue-600">
+            <i class="fa-solid fa-pen-to-square text-white bg-blue-600 p-4 text-2xl md:text-xl"></i>
+          </div>
+          <h3 class="text-3xl font-semibold text-gray-800">Enjoying Life</h3>
+          <p class="text-gray-600 text-base lg:text-lg leading-relaxed">
+            Besides creating amazing websites, I enjoy running, listening to music, watching series, observing people, and I'm also a trained skater. My favorite sports are cricket and football, and one of my favorite hobbies is cooking.
+          </p>
+          <div class="bg-blue-600 h-1 w-28 mt-5 transition-all duration-500 group-hover:w-56 md:group-hover:w-72"></div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section id="whatido">
     <div class="lg:container lg:mx-auto px-6 md:px-10 lg:px-8 xl:px-20">
       <div class="text-center">
-        <h1 class="text-5xl mb-16 font-medium text-blue-600 underline lg:text-6xl">
+        <h1 id="section-whatido" class=" text-5xl mb-16 font-medium text-blue-600 underline lg:text-6xl">
           What I do
         </h1>
       </div>
@@ -89,10 +145,9 @@
           </h3>
           <ul class="text-base text-gray-500 lg:text-lg 2xl:text-xl">
             <li><span class="text-black">Frontend</span> - Bootstrap,TailwindCSS Javascript, Jquery, React JS</li>
-            <li><span class="text-black">Libraries</span> - Pannellum JS, GSAP, Scroll Trigger</li>
-            <li><span class="text-black">Backend</span> - Node JS, Express, Pug</li>
-            <li><span class="text-black">Databases</span> - MYSQL, MongoDB</li>
-            <!-- <li><span class="text-black">Familiar with or Learning</span> - Typescript,Ne </li> -->
+            <li><span class="text-black">Libraries</span> - Pannellum.js, GSAP, Scroll Trigger, Matter.js</li>
+            <li><span class="text-black">Backend</span> - Node JS, Express, Pug/Ejs</li>
+            <li><span class="text-black">Databases</span> - MongoDB</li>
           </ul>
           <div class="transition-width duration-1000 bg-blue-600 h-1 w-28 mt-5 group-hover:w-56 md:group-hover:w-72">
           </div>
@@ -116,114 +171,366 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!--Projects-->
   <section id="projects">
-    <div class="xl:container xl:mx-auto px-6 md:px-6 lg:px-10 xl:px-6 my-32 ">
+    <div class="mx-auto px-2 sm:px-10 xl:px-6 my-32 ">
       <div class="text-center">
-        <h1 class="text-5xl mb-16 font-medium text-blue-600 underline lg:text-6xl">
+        <h1 id="section-projects" class=" text-5xl mb-16 font-medium text-blue-600 underline lg:text-6xl">
           Projects
         </h1>
       </div>
-      <div
-        class="grid grid-cols-1 md:gap-y-10 xl:gap-y-20 grid-rows-9 gap-10 md:grid-cols-3 md:grid-rows-3 md:gap-4 lg:gap-6 xl:gap-x-6">
 
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="focusbuddy.in" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/focusbuddy.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col gap-3 md:gap-2 md:px-4 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
+      <div id="project-section-wrapper" class="mb-[150px]  lg:mb-[300px]">
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-blue-600">
+          <div class="basis-1/2">
+            <a href="https://focusbuddy.in" target="_blank" rel="noopener noreferrer">
+              <img
+                class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                src="./img/focusbuddy.png"
+                alt="FocusBuddy Project Screenshot"
+              />
+            </a>
+          
+            <div class="flex justify-between items-center mt-4">
+              <ul class="flex flex-wrap gap-2 md:gap-4 text-gray-700 text-xs md:text-sm">
+                <li class="bg-white px-4 py-1 rounded-full shadow">MERN</li>
+                <li class="bg-white px-4 py-1 rounded-full shadow">TailwindCSS</li>
+              </ul>
+          
+              <div class="flex gap-4">
+                <a
+                  href="https://focusbuddy.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold underline underline-offset-4 text-white hover:text-blue-200 transition"
+                >
+                  Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="basis-1/2 text-white">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
               FocusBuddy
             </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              MERN Stack, TailwindCSS
-            </span>
-            <p class="text-base text-gray-500 lg:text-lg 2xl:text-xl">
+            <p class="mt-4 text-base text-md md:text-lg ">
               It's a virtual coworking space for students, who are preparing for competitive exams. They can join a 50min session which inturn maximize their efficiency and increase productivity.
             </p>
-
-            <a href="https://github.com/FocusBuddy/FocusBuddy2025"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Authentication & Authorization using Passport.js</li>
+              <li>Stripe/Razorpay Payment Integration</li>
+              <li>Zoom/getStream.io Video Call</li>
+              <li>React Big Calendar</li>
+            </ul>
           </div>
         </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-white">
+          <div class="basis-1/2">
+            <a href="https://godrejproperties.antrikshglobal.com/" target="_blank" rel="noopener noreferrer"><img
+              class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="./img/godrej.png" alt="Godrej Properties Project Screenshot" /></a>
 
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://godrejproperties.antrikshglobal.com/" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/godrej.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col gap-3 md:gap-2 md:px-4 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
+              <div class="flex justify-between items-center mt-4">
+                <ul class="flex flex-wrap gap-2 md:gap-4 text-white text-xs md:text-sm">
+                  <li class="bg-blue-600 px-4 py-1 rounded-full shadow">JS</li>
+                  <li class="bg-blue-600 px-4 py-1 rounded-full shadow">PannellumJs</li>
+                </ul>
+            
+                <div class="flex gap-4">
+                  <a
+                    href="https://godrejproperties.antrikshglobal.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold underline underline-offset-4 text-gray-700 hover:text-blue-600 transition"
+                  >
+                    Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+          </div>
+          <div class="basis-1/2">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
               Godrej Properties Project
             </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              HTML, CSS, JS, PannellumJs
-            </span>
-            <p class="text-base text-gray-500 lg:text-lg 2xl:text-xl">
+            <p class="mt-4 text-base text-md md:text-lg ">
               Using equirectangular image to create 360 deg rotating feature
               using pannellum js library & popup location tag on user click.
             </p>
-
-            <a href="https://godrejproperties.antrikshglobal.com/"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Implemented Panorama Feature (360 deg view)</li>
+              <li>Location Tag Popup As User Interact</li>
+            </ul>
           </div>
         </div>
-
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://r1414a.github.io/projectie-motion-simulation/" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/projectile-motion.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col gap-3 md:gap-2 md:px-4 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-blue-600">
+          <div class="basis-1/2">
+            <a href="https://mypokemonapp-vert.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img
+                class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                src="./img/pokemonapp.png""
+                alt="myPokemonApp Project Screenshot"
+              />
+            </a>
+          
+            <div class="flex justify-between items-center mt-4">
+              <ul class="flex flex-wrap gap-2 md:gap-4 text-gray-700 text-xs md:text-sm">
+                <li class="bg-white px-4 py-1 rounded-full shadow">JS</li>
+                <li class="bg-white px-4 py-1 rounded-full shadow">ReactJS</li>
+                <li class="bg-white px-4 py-1 rounded-full shadow">TailwindCSS</li>
+              </ul>
+          
+              <div class="flex gap-4">
+                <a
+                  href="https://mypokemonapp-vert.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold underline underline-offset-4 text-white hover:text-blue-200 transition"
+                >
+                  Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="basis-1/2 text-white">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
+              myPokemonApp
+            </h3>
+            <p class="mt-4 text-base text-md md:text-lg ">
+              Created this Project to implement React major features, used Tailwind & MaterialUI
+            </p>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Storing Favorites in LocalStorage</li>
+              <li>Filtering(by type)/Sorting(by name,weight,height)</li>
+              <li>Pagination(items per page.)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-white">
+          <div class="basis-1/2">
+            <a href="https://r1414a.github.io/projectie-motion-simulation/" target="_blank" rel="noopener noreferrer">
+              <img
+                class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                src="./img/projectile-motion.png""
+                alt="Projectile Motion Project Screenshot"
+              />
+            </a>
+          
+            <div class="flex justify-between items-center mt-4">
+              <ul class="flex flex-wrap gap-2 md:gap-4 text-white text-xs md:text-sm">
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">JS</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">Matter.js</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">P5.js</li>
+              </ul>
+          
+              <div class="flex gap-4">
+                <a
+                  href="https://r1414a.github.io/projectie-motion-simulation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold underline underline-offset-4 text-gray-700 hover:text-blue-600 transition"
+                >
+                  Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="basis-1/2">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
               Projectile Motion Simulation
             </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              HTML, CSS, JS, Matter.js, P5.js
-            </span>
-            <p class="text-base text-gray-500 lg:text-lg 2xl:text-xl">
-              Created projectile motion simulation using matter.js physics engine, so students can learn visually about
-              concept.
+            <p class="mt-4 text-base text-md md:text-lg ">
+              Created projectile motion simulation using matter.js physics engine, so students can learn visually about concept.
             </p>
-
-            <a href="https://r1414a.github.io/projectie-motion-simulation/"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Matterjs To Create Bodies & They Behave Like Bodies In Real World (Real Physics Applied To Them)</li>
+              <li>P5.js Provide Canvas To Show Bodies</li>
+            </ul>
           </div>
         </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-blue-600">
+          <div class="basis-1/2">
+            <a href="https://book-directory-app.onrender.com" target="_blank" rel="noopener noreferrer"><img
+              class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="./img/book.png" alt="Book Directory Project Screenshot" /></a>
 
-
-        
-
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://book-directory-app.onrender.com" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/book.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
+              <div class="flex justify-between items-center mt-4">
+                <ul class="flex gap-2 md:gap-4 text-gray-700 text-xs md:text-sm">
+                  <li class="bg-white px-4 py-1 rounded-full shadow">MERN</li>
+                </ul>
+            
+                <div class="flex gap-4">
+                  <a
+                    href="https://book-directory-app.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold underline underline-offset-4 text-white hover:text-blue-200 transition"
+                  >
+                    Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+          </div>
+          <div class="basis-1/2 text-white">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
               Book Directory App
             </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              HTML, CSS, JS, Nodejs, MongoDb
-            </span>
-            <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
+            <p class="mt-4 text-base text-md md:text-lg ">
               App where you can add a book written by author,by
               filling a form, add author, delete book details means you can
               perform all CRUD operations.
             </p>
-
-            <a href="https://book-directory-app.onrender.com"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Server-Side Rendering</li>
+              <li>RESTfull API (Express.js)</li>
+              <li>Pug/Ejs Template Engine To Serve Static Files.</li>
+              <li>Data Management (MongoDB Database)</li>
+            </ul>
           </div>
         </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-white">
+          <div class="basis-1/2">
+            <a href="https://r1414a.github.io/Frontend-Animation-Website-I/" target="_blank" rel="noopener noreferrer">
+              <img
+                class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                src="./img/frontend-1.png"
+                alt="Website Project Screenshot"
+              />
+            </a>
+          
+            <div class="flex justify-between items-center mt-4">
+              <ul class="flex flex-wrap gap-2 md:gap-4 text-white text-xs md:text-sm">
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">JS</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">GSAP</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">Scroll Trigger</li>
+              </ul>
+          
+              <div class="flex gap-4">
+                <a
+                  href="https://r1414a.github.io/Frontend-Animation-Website-I/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold underline underline-offset-4 text-gray-700 hover:text-blue-600 transition"
+                >
+                  Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="basis-1/2">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
+              Frontend-Animation-Website
+            </h3>
+            <p class="mt-4 text-base text-md md:text-lg ">
+              Website made using advanced technologies like
+              locomotive for smooth scrolling, scroll trigger and GSAP for
+              scrolling animations
+            </p>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>GSAP Animations</li>
+              <li>GSAP ScrollTrigger()</li>
+              <li>GSAP SplitText()</li>
+            </ul>
+          </div>
+        </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-blue-600">
+          <div class="basis-1/2">
+            <a href="https://r1414a.github.io/Memory-Game/" target="_blank" rel="noopener noreferrer"><img
+              class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="./img/memory.png" alt="Memory game Project Screenshot" /></a>
 
+              <div class="flex justify-between items-center mt-4">
+                <ul class="flex flex-wrap gap-2 md:gap-4 text-gray-700 text-xs md:text-sm">
+                  <li class="bg-white px-4 py-1 rounded-full shadow">HTML</li>
+                  <li class="bg-white px-4 py-1 rounded-full shadow">CSS</li>
+                  <li class="bg-white px-4 py-1 rounded-full shadow">JS</li>
+                </ul>
+            
+                <div class="flex gap-4">
+                  <a
+                    href="https://r1414a.github.io/Memory-Game/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold underline underline-offset-4 text-white hover:text-blue-200 transition"
+                  >
+                    Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+          </div>
+          <div class="basis-1/2 text-white">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
+              Memory Game
+            </h3>
+            <p class="mt-4 text-base text-md md:text-lg ">
+              It's a game to test your memory, in which you will be given 3
+              seconds to memories image on cards then you have to make pair of
+              them.
+            </p>
+            <h4 class="mt-6 font-semibold text-md md:text-lg">Features:</h4>
+            <ul class="list-disc ms-4 text-md md:text-lg">
+              <li>Javascript Concepts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="projects-sections p-4 md:p-8 lg:p-14 gap-4 md:gap-10 flex flex-col lg:flex-row h-[600px] md:h-[750px] lg:h-[480px] mb-10 rounded-3xl bg-white">
+          <div class="basis-1/2">
+            <a href="https://github.com/r1414a/wordpress-elementor-work" target="_blank" rel="noopener noreferrer">
+              <img
+                class="h-[200px] md:h-[300px] w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                src="./img/elementor.png"
+                alt="Elementor Project Screenshot"
+              />
+            </a>
+          
+            <div class="flex justify-between items-center mt-4">
+              <ul class="flex flex-wrap gap-2 md:gap-4 text-white text-xs md:text-sm">
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">Elementor</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">JS</li>
+                <li class="bg-blue-600 px-4 py-1 rounded-full shadow">GSAP</li>
+              </ul>
+          
+              <div class="flex gap-4">
+                <a
+                  href="https://github.com/r1414a/wordpress-elementor-work"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold underline underline-offset-4 text-gray-700 hover:text-blue-600 transition"
+                >
+                  Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="basis-1/2 ">
+            <h3 class="text-2xl font-semibold 2xl:text-3xl">
+              Elementor Projects
+            </h3>
+            <p class="mt-4 text-base text-md md:text-lg ">
+              This are some websites / landing pages, I made using Elementor
+              page builder for Dubai client during my 1 year of work period in
+              Antriksh Global.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+
+      <!-- <div
+        class="mt-10 grid grid-cols-1 md:gap-y-10 xl:gap-y-20 grid-rows-9 gap-10 md:grid-cols-3 md:grid-rows-3 md:gap-4 lg:gap-6 xl:gap-x-6">
         <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
           <a href="https://movie-information-app.netlify.app" target="_blank"><img
               class="h-44 w-full 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
@@ -249,7 +556,7 @@
 
         </div>
 
-        <!-- <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
+         <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
           <a href="https://login-register-form-using-nodejs-2620.onrender.com/" target="_blank"><img
               class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
               src="./img/login-register.png" alt="project_image" /></a>
@@ -272,145 +579,19 @@
             </a>
           </div>
 
-        </div> -->
-
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://r1414a.github.io/Frontend-Animation-Website-I/" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/frontend-1.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
-              Frontend Animated Website
-            </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              JS, GSAP, Locomotive, Scroll-Trigger
-            </span>
-            <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
-              Website made using advanced technologies like
-              locomotive for smooth scrolling, scroll trigger and GSAP for
-              scrolling animations
-            </p>
-
-            <a href="https://r1414a.github.io/Frontend-Animation-Website-I/"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
-          </div>
-
-        </div>
-
-        <!-- <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://r1414a.github.io/Frontend_Animation-Website-II/" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/frontend-2.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
-              Frontend Animated Website
-            </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              HTML, CSS, JS, Locomotive, Scoll-Trigger
-            </span>
-            <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
-              Frontend animation website made using advanced technologies like
-              horizontal scrolling feature using locomotive & scroll trigger.
-            </p>
-
-            <a href="https://r1414a.github.io/Frontend_Animation-Website-II/"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
-          </div>
-
-        </div> -->
-
-        <!-- <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-            <a
-              href="https://r1414a.github.io/Rock-Paper-Scissor/"
-              target="_blank"
-              ><img class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110" src="./img/rock.png" alt="project_image"
-            /></a>
-            <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-              <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
-                Rock-Paper-Scissors Game
-              </h3>
-              <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-                HTML, CSS, JS
-              </span>
-              <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
-                It's a world famous rock paper scissors game, but this time you
-                will be competing against your computer.are you ready for challenge!!!
-              </p>
-              
-              <a href="https://r1414a.github.io/Rock-Paper-Scissor/"
-            class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700"
-          >
-            View Project
-          </a>
-            </div>
-            
-          </div> -->
-
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://r1414a.github.io/Memory-Game/" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/memory.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
-              Memory Game
-            </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              HTML, CSS, JS
-            </span>
-            <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
-              It's a game to test your memory, in which you will be given 3
-              seconds to memories image on cards then you have to make pair of
-              them.
-            </p>
-
-            <a href="https://r1414a.github.io/Memory-Game/"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
-          </div>
-
-        </div>
-
-        <div class="group transition-shadow duration-1000 shadow hover:shadow-2xl overflow-hidden">
-          <a href="https://github.com/r1414a/wordpress-elementor-work" target="_blank"><img
-              class="w-full h-44 2xl:h-56 transition duration-1000 ease-in-out group-hover:scale-110"
-              src="./img/elementor.png" alt="project_image" /></a>
-          <div class="px-6 lg:px-6 pt-4 pb-6 flex flex-col md:gap-2 md:px-4 gap-3 justify-start items-start">
-            <h3 class="text-gray-700 text-2xl font-semibold 2xl:text-3xl">
-              Elementor Projects
-            </h3>
-            <span class="text-gray-900 font-semibold text-base lg:text-lg 2xl:text-xl">
-              Elementor, HTML, CSS, JS, GSAP
-            </span>
-            <p class="text-gray-500 text-base lg:text-lg 2xl:text-xl">
-              This are some websites / landing pages, I made using Elementor
-              page builder for Dubai client during my 1 year of work period in
-              Antriksh Global.
-            </p>
-
-            <a href="https://github.com/r1414a/wordpress-elementor-work"
-              class="transition-all duration-1000 border border-blue-600 text-white bg-blue-600 mt-2 py-2 px-3 sm:px-4 md:px-5 sm:text-lg 2xl:text-xl shadow-lg shadow-black-50 hover:border hover:border-blue-600 hover:bg-white hover:text-gray-700">
-              View Project
-            </a>
-          </div>
-
-        </div>
-      </div>
+        </div> 
+      </div> -->
     </div>
   </section>
 
   <!-- Contact Me-->
-  <section id="contact">
-    <div class="lg:container lg:mx-auto px-6 md:px-10 lg:px-4 text-white py-16 bg-blue-600">
+  <section id="contact" class="flex justify-center items-center">
+    <div id="contact-section-heading" class="w-full mx-auto px-6 md:px-10 lg:px-4 text-white py-16 bg-blue-600">
       <h1 class="text-center text-4xl mb-12 font-medium underline md:text-5xl">
         Connect with me
       </h1>
 
-      <div class="flex justify-center my-8 gap-6">
+      <div id="contact-section-link" class="flex justify-center my-8 gap-6">
         <a href="tel:+919637609051"
           class="group text-xl md:text-2xl 2xl:text-3xl border border-white text-blue-600 hover:border hover:border-white hover:bg-transparent hover:text-white"><i
             class="transition-all ease-in-out duration-1000 fa-solid fa-phone bg-white p-3 sm:p-4 group-hover:bg-transparent"></i></a>
@@ -427,24 +608,23 @@
           class="group text-xl md:text-2xl 2xl:text-3xl border border-white text-blue-600 hover:border hover:border-white hover:bg-transparent hover:text-white"><i
             class="transition-all ease-in-out duration-1000 fa-sharp fa-solid fa-envelope bg-white p-3 sm:p-4 group-hover:bg-transparent"></i></a>
       </div>
-      <div>
+      <div id="contact-section-copy">
         <p class="text-center text-base md:text-xl">
           2025
           <i class="fa-solid fa-copyright"></i>
           Rupesh Chincholkar
         </p>
       </div>
-      <div>
-        <p class="text-center text-base md:text-xl">
-          Skills used to make this site: HTML, TailwindCSS
+      <div id="contact-section-skill">
+        <p class="mt-3 text-center text-base md:text-xl">
+          Skills used to make this site: HTML, TailwindCSS, GSAP, ScrollTrigger, Matter.js, P5.js
         </p>
       </div>
     </div>
     <div></div>
   </section>
 </body>
-<!-- <script type="text/javascript" src="https://freehitcounters.org/count/fbf8"></script><br> -->
-<!-- <a href='https://www.easybooking.eu/'>Hotelsoftware kleine Hotels</a> <script type='text/javascript' src='https://whomania.com/ctr?id=d7506ea75c1e1ff3efea95ee03a868415ea7d5e4'></script> -->
 <script src="index.js"></script>
+<script src="gsap.js"></script>
 
 </html>

@@ -151,6 +151,11 @@
     margin: 0px;  
     font-family: 'Nunito', Arial, Helvetica Neue, sans-serif;
 }
+
+html{
+    scroll-behavior: smooth !important;
+}
+
 p{
     font-size: 18px;
     font-weight: 400;
@@ -172,68 +177,15 @@ nav span{
     color: #3f4a57;
 }
 
-
-/* Home section*/
-#first{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
+body{
+    overflow-x: hidden;
 }
 
-#first::after{
-    content: "";
+#sub-hero a.sub-hero-interactive-button:hover{
     background-color: white;
-    background: url("./img/photo.jpg") no-repeat center center/cover;
-    position: absolute;
-    width: 20%;
-    height: 45%;
-    top: 20%;
-    left: 57%;
-    border-radius: 20px;
-    box-shadow: 15px 15px 0px 0px gold;
+    color: gray;
 }
 
-#first #first-column-1{
-    color: white;
-    background-color: #101010;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#first #first-column-1 h1{
-    font-size: 2.7rem;
-    text-align: center;
-}
-#first #first-column-1 h1 span{
-    color: gold;
-}
-
-#first #first-column-1 #mytext{
-    font-size: 1.7rem;
-}
-
-#first #first-column-2{
-    background-color: #ECECEC;
-    width: 50%;
-}
-
-#first #first-column-1 button{
-    font-size: 1rem;
-    padding: 10px;
-    background-color: #101010;
-    color: white;
-    border: 1px solid white;
-    margin-top: 10px;
-}
-
-#first #first-column-1 button:hover{
-    background-color: gold;
-    color: black;
-    cursor: pointer;
-}
 
 /*ABOUT ME Section*/
 
