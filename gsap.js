@@ -83,8 +83,8 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         
         
-        
-        const sections = gsap.utils.toArray(".projects-sections");
+        if(window.innerWidth > 1024){
+             const sections = gsap.utils.toArray(".projects-sections");
         // console.log(sections)
         
         let lastSection = ScrollTrigger.create({
@@ -97,11 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
             ScrollTrigger.create({
               trigger: section,
               start: () => {
-                  if(window.innerWidth < 676){
-                    return `top-=30px top`
-                  }else{
                     return `center+=70px center+=${i * 30}`
-                  }
             } ,
               end: () => lastSection.start,
               pin: true,
@@ -109,8 +105,9 @@ window.addEventListener("DOMContentLoaded", () => {
             //   markers: true
             });
           });
-        
-        
+        }else{
+            return null;
+        }
         
           //Sometimes, when the layout changes after initial page load, the positions used by ScrollTrigger can be inaccurate or stale., after initial load scrollY may be 3200 but if some section gets added dynamically, then that section is now physically present in dom and is taking some space so that scrollY will get changed but scrollTrigger is not recalculating it, it is still taking the previous evaluated value,that's whu we need to do this 
           ScrollTrigger.refresh(); 
